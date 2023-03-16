@@ -1,0 +1,19 @@
+{
+  "name": "ye",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "gsap": "^3.11.4",
+    "parcel": "^2.8.3",
+    "sass": "^1.59.3"
+  }
+}
