@@ -1,5 +1,4 @@
-/public
 node_modules
-.env
 .parcel-cache
 dist
+package-lock.json
