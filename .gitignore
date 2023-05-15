@@ -1,5 +1,9 @@
+/public
+.env
+.cache
 /node_modules
-.parcel-cache
 /dist
+/.parcel-cache
+.env
 package-lock.json
 /.DS_Store
