@@ -12,8 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/config-default": "^2.0.0",
+    "@parcel/packager-raw-url": "^2.8.3",
     "@parcel/transformer-pug": "2.0.0",
     "@parcel/transformer-sass": "^2.1.1",
+    "@parcel/transformer-webmanifest": "^2.8.3",
     "auto-bind": "^4.0.0",
     "gsap": "^3.11.4",
     "include-media": "^2.0.0",
