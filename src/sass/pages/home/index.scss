@@ -1,0 +1,18 @@
+%padding-home {
+  padding-inline: 4rem;
+  @include media("<=phone") {
+    padding-inine: 1.6rem;
+  }
+}
+
+.home {
+  padding: 2.4rem 0;
+  &__nav {
+    @extend %padding-home;
+    @extend %description-12;
+    margin-bottom: 6.4rem;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.4;
+  }
+}

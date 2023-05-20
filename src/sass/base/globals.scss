@@ -12,7 +12,7 @@ html {
 
 // resets
 body {
-  font-family: $font-sauce, sans-serif;
+  font-family: $font-cormorant, sans-serif;
   background: $col-black;
   font-weight: 500;
   min-height: 100vh;
@@ -86,5 +86,5 @@ html.has-scroll-dragging {
 
 ::selection {
   background-color: $col-gray;
-  color: $col-orange;
+  color: $col-white;
 }

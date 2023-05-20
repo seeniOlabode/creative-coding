@@ -1,7 +1,7 @@
 %title-328 {
   font-size: 20.1rem;
-  // letter-spacing: -0.05em;
-  font-family: $font-haas;
+  letter-spacing: -0.05em;
+  font-family: $font-cormorant;
   word-break: break-word;
 
   @include media("<=phone") {
@@ -11,7 +11,7 @@
 
 %title-160 {
   font-size: 16rem;
-  font-family: $font-haas;
+  font-family: $font-cormorant;
   letter-spacing: -0.025em;
 
   @include media("<=phone") {
