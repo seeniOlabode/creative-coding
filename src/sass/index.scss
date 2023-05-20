@@ -3,6 +3,7 @@
 @import "./utils/mixins.scss";
 @import "./utils/variables.scss";
 
+@import "./base/resets.scss";
 @import "./base/fonts.scss";
 @import "./base/globals.scss";
 
@@ -11,5 +12,5 @@
 @import "./shared/links.scss";
 @import "./shared/title.scss";
 
-@import "./pages/home/index.scss";
-@import "./pages/home/about.scss";
+@import "./pages/index.scss";
+@import "./pages/about/index.scss";

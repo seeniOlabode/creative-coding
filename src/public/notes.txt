@@ -1,0 +1,4 @@
+- Notes from executing this project
+
+1. Learn How to clone an element in the DOM Node
+2. Create a new Element everytime the scroll position is greater than the window height.

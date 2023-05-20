@@ -1,0 +1,97 @@
+%padding-home {
+  padding-inline: 2rem;
+
+  @include media("<=phone") {
+    padding-inline: 1.6rem;
+  }
+}
+
+.home {
+  color: $col-white !important;
+  background-color: $col-green;
+  min-height: 100vh;
+  width: 100%;
+  &__nav {
+    @extend %padding-home;
+    @extend %description-16;
+    padding-top: 4rem;
+    margin-bottom: 6.4rem;
+    display: flex;
+    position: fixed;
+    width: 96%;
+    justify-content: space-between;
+    line-height: 1.4;
+    z-index: 4;
+    &-name a {
+      text-transform: uppercase;
+      &:hover {
+        color: $col-white;
+      }
+    }
+
+    &-list {
+      @include flex(space-between, center, row);
+      @extend %description-12;
+      gap: 2rem;
+    }
+
+    &-list__item {
+      @extend %link--hidden;
+      color: $col-boulder;
+      cursor: pointer;
+      &:hover {
+        color: $col-white;
+      }
+    }
+  }
+
+  &__menu {
+    @include flex(space-between, center, column);
+
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+    .menu__item {
+      @include flex(center, center, column);
+      min-height: 10vh;
+      padding-block: 2rem;
+      @include media("<=tablet") {
+        min-height: 7rem;
+      }
+    }
+    .menu__item-inner {
+      font-size: 7rem;
+      text-transform: uppercase;
+      @extend %link--hidden;
+      cursor: pointer;
+      &:hover {
+        color: $col-white;
+      }
+      @include media("<=phone") {
+        font-size: 3.2rem;
+        text-transform: capitalize;
+        letter-spacing: -1px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__footer {
+    @include flex(space-between, center, row);
+    padding-block: 2rem;
+    padding-inline: 2rem;
+    color: $col-boulder;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &__links {
+      display: flex;
+      gap: 2rem;
+    }
+    &__links-link:hover {
+      color: $col-white;
+    }
+  }
+}
