@@ -2,7 +2,6 @@
   "name": "my-kanye-arc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "scripts": {
     "start": "rm -rf .parcel-cache && parcel src/index.html -p 3000 --host 0.0.0.0",
     "build": "parcel build src/index.html --dist-dir dist"
