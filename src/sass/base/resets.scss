@@ -133,3 +133,8 @@ a {
   text-decoration-color: none;
   color: $col-boulder;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none !important;
+}

@@ -47,7 +47,6 @@ export default class InfiniteMenu {
   }
 
   getScrollPos() {
-    console.log(this.DOM.el.scrollTop);
     return (
       (this.DOM.el.pageYOffset || this.DOM.el.scrollTop) -
       (this.DOM.el.clientTop || 0)
@@ -68,6 +67,7 @@ export default class InfiniteMenu {
   initScroll() {
     // Scroll 1 pixel to allow upwards scrolling
     this.scrollPos = this.getScrollPos();
+
     if (this.scrollPos <= 0) {
       this.setScrollPos(1);
     }
@@ -80,9 +80,11 @@ export default class InfiniteMenu {
       this.setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
     } else if (this.scrollPos <= 0) {
       // Scroll to the bottom when you reach the top
+      console.log(this.scrollPos, this.scrollHeight - this.clonesHeight);
       this.setScrollPos(this.scrollHeight - this.clonesHeight);
     }
   }
+
   render() {
     this.scrollUpdate();
     requestAnimationFrame(() => this.render());
