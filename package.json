@@ -2,7 +2,6 @@
   "name": "my-kanye-arc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "alias": {
     "process": {
       "global": {}
