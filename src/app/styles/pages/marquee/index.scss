@@ -1,0 +1,404 @@
+/**
+* Variables
+**/
+$col-black: #07090f;
+$col-white: #ffffff;
+$col-orange: #cc3f0c;
+$col-brown: #2b2118;
+$col-boulder: #777777;
+$col-gray: #aaaaaa;
+
+$font-cormorant: "General Sans";
+
+%padding-home {
+  padding-inline: 4rem;
+  @media screen and (max-width: 768px) {
+    padding-inine: 1.6rem;
+  }
+}
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+.home {
+  background-color: $col-black;
+  &__nav {
+    padding-inline: 2rem;
+    padding-top: 2rem;
+    background-color: $col-black;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.4;
+    &-name a {
+      color: $col-white;
+      text-transform: uppercase;
+      &:hover {
+        color: $col-boulder;
+      }
+    }
+
+    &-list {
+      @include flex(space-between, center, row);
+      gap: 2rem;
+    }
+
+    &-list__item {
+      color: $col-boulder;
+      cursor: pointer;
+      font-size: 0.8rem;
+      &:hover {
+        color: $col-white;
+      }
+    }
+  }
+  &__menu {
+    width: 100%;
+    height: 100vh;
+    padding-block: 3rem;
+    background-color: $col-black;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      :last-child {
+        box-shadow: 0 1px $col-boulder, 0 -1px $col-boulder;
+      }
+    }
+    &-item {
+      position: relative;
+      width: 100vw;
+      text-align: center;
+      box-shadow: 0 -1px $col-boulder;
+      overflow: hidden;
+      height: 15rem;
+      :last-child {
+        box-shadow: none;
+      }
+      &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $col-orange;
+        transform: translate3d(0, 101%, 0);
+        &-inner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+          white-space: nowrap;
+          font-size: 6vw;
+          line-height: 1.2;
+          font-weight: 600;
+          box-shadow: none;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+
+      .marquee {
+        pointer-events: none;
+        background: var(--marquee-bg);
+        height: 15rem;
+        &__inner {
+          display: flex;
+          position: relative;
+          height: 100%;
+          width: fit-content;
+          align-items: center;
+          animation: marquee 15s linear infinite;
+          will-change: transform;
+          &-wrap {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__img {
+          width: 15vw;
+          height: 5rem;
+          margin: 0 2vw;
+          border-radius: 5vw;
+          background-size: cover;
+          background-position: 50% 50%;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+* Marquee
+*/
+
+.menu-wrap {
+  display: flex;
+  flex-direction: column;
+  //   width: 100vw;
+  position: relative;
+  top: 0;
+  justify-content: flex-start;
+  padding-block: 10rem;
+}
+
+.menu__item {
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  //   height: 15rem;
+  box-shadow: 0 -1px $col-boulder;
+}
+
+.menu__item:last-child {
+  box-shadow: 0 1px $col-boulder, 0 -1px $col-boulder;
+}
+
+.menu__item-link {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  height: 13rem;
+  font-family: $font-cormorant;
+  color: $col-white;
+}
+
+.menu__item-link:focus,
+.menu__item-link:focus-visible {
+  color: var(--menu-focus);
+}
+
+.menu__item-link:focus:not(:focus-visible) {
+  color: $col-white;
+}
+
+.marquee {
+}
+
+.marquee__inner-wrap {
+}
+
+.marquee__inner {
+}
+
+.menu__item-link,
+.marquee span {
+  white-space: nowrap;
+  font-size: 6vw;
+  line-height: 1.2;
+  font-weight: 600;
+  padding: 1vh 1vw 0;
+  text-transform: uppercase;
+}
+
+.marquee span {
+  text-align: center;
+  color: $col-white;
+  font-weight: 400;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes loaderAnim {
+  to {
+    opacity: 1;
+    transform: scale3d(0.5, 0.5, 1);
+  }
+}
+
+a {
+  color: $col-white;
+  outline: none;
+}
+
+a:hover {
+  outline: none;
+  text-decoration: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+  /* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+  outline: none;
+  background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+  background: $col-orange;
+}
+
+a:focus-visible {
+  /* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+  outline: 2px solid red;
+  background: transparent;
+}
+
+/**
+* Resets
+**/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
