@@ -2,6 +2,12 @@
   "name": "my-kanye-arc",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
+  "alias": {
+    "process": {
+      "global": {}
+    }
+  },
   "scripts": {
     "start": "rm -rf .parcel-cache && parcel src/index.html -p 3000 --host 0.0.0.0",
     "build": "parcel build src/index.html --dist-dir dist"
@@ -12,6 +18,7 @@
   "devDependencies": {
     "@parcel/config-default": "^2.0.0",
     "@parcel/packager-raw-url": "^2.8.3",
+    "@parcel/transformer-glsl": "^2.8.3",
     "@parcel/transformer-pug": "2.0.0",
     "@parcel/transformer-sass": "^2.1.1",
     "@parcel/transformer-webmanifest": "^2.8.3",
@@ -20,6 +27,7 @@
     "include-media": "^2.0.0",
     "locomotive-scroll": "^4.1.4",
     "normalize-wheel": "^1.0.1",
+    "ogl": "0.0.60",
     "parcel": "^2.3.2",
     "parcel-reporter-static-files-copy": "^1.3.0",
     "prefix": "^1.0.0",
