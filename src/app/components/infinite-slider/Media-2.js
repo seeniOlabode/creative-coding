@@ -25,6 +25,7 @@ export default class {
   createMesh() {
     const image = new Image();
     image.crossOrigin = "anonymous";
+
     const texture = new Texture(this.gl, {
       generateMipmaps: false,
     });
@@ -128,8 +129,6 @@ export default class {
    */
   onResize(sizes) {
     this.extra = 0;
-
-    console.log(this.sizes);
 
     if (sizes) {
       const { width, screen, viewport } = sizes;

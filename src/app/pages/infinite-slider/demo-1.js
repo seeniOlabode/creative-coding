@@ -4,7 +4,7 @@ import NormalizeWheel from "normalize-wheel";
 import Media from "../../components/infinite-slider/Media-1";
 import { lerp } from "../../utils/math.js";
 
-export default class Demo1 {
+export default class App {
   constructor() {
     this.scroll = {
       ease: 0.05,
@@ -80,7 +80,6 @@ export default class Demo1 {
   /**
    * Events.
    */
-
   onTouchDown(event) {
     this.isDown = true;
 
@@ -111,7 +110,6 @@ export default class Demo1 {
   /**
    * Resize.
    */
-
   onResize() {
     this.screen = {
       height: window.innerHeight,
@@ -151,7 +149,6 @@ export default class Demo1 {
   /**
    * Update.
    */
-
   update() {
     this.scroll.target += this.speed;
 
@@ -202,4 +199,4 @@ export default class Demo1 {
   }
 }
 
-new Demo1();
+new App();

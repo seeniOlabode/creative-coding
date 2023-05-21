@@ -14,7 +14,6 @@ export default class InfiniteMenu {
 
       this.initEvents();
 
-      // Loop
       requestAnimationFrame(() => this.render());
     } else {
       document.body.classList.add("mobile");
@@ -41,7 +40,6 @@ export default class InfiniteMenu {
         ++totalClones;
       });
 
-    // All clones height
     this.clonesHeight = totalClones * itemHeight;
     this.scrollHeight = this.DOM.el.scrollHeight;
   }
@@ -65,7 +63,6 @@ export default class InfiniteMenu {
     this.initScroll();
   }
   initScroll() {
-    // Scroll 1 pixel to allow upwards scrolling
     this.scrollPos = this.getScrollPos();
 
     if (this.scrollPos <= 0) {
@@ -76,11 +73,8 @@ export default class InfiniteMenu {
     this.scrollPos = this.getScrollPos();
 
     if (this.clonesHeight + this.scrollPos >= this.scrollHeight) {
-      // Scroll to the top when you’ve reached the bottom
-      this.setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
+      this.setScrollPos(1);
     } else if (this.scrollPos <= 0) {
-      // Scroll to the bottom when you reach the top
-      console.log(this.scrollPos, this.scrollHeight - this.clonesHeight);
       this.setScrollPos(this.scrollHeight - this.clonesHeight);
     }
   }

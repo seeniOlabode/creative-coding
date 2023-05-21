@@ -4,7 +4,6 @@ import NormalizeWheel from "normalize-wheel";
 import { lerp } from "../../utils/math";
 
 import fragment from "../../shaders/infinite-slider/demo-2/fragment.glsl";
-
 import Media from "../../components/infinite-slider/Media-2";
 
 export default class App {
@@ -85,7 +84,6 @@ export default class App {
   createMedias() {
     this.mediasElements = document.querySelectorAll(".demo-2__gallery__figure");
     this.medias = Array.from(this.mediasElements).map((element) => {
-      console.log(media);
       let media = new Media({
         element,
         geometry: this.planeGeometry,
@@ -103,6 +101,7 @@ export default class App {
   /**
    * Events.
    */
+
   onTouchDown(event) {
     this.isDown = true;
 
@@ -176,6 +175,7 @@ export default class App {
   /**
    * Update.
    */
+
   update() {
     this.scroll.target += this.speed;
 
@@ -211,7 +211,7 @@ export default class App {
   }
 
   /**
-   * Listeners.
+   * Event Listeners.
    */
   addEventListeners() {
     window.addEventListener("resize", this.onResize.bind(this));
@@ -228,3 +228,5 @@ export default class App {
     window.addEventListener("touchend", this.onTouchUp.bind(this));
   }
 }
+
+new App();

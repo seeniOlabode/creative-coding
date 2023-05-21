@@ -3,7 +3,7 @@ import { Mesh, Program, Texture } from "ogl";
 import fragment from "../../shaders/infinite-slider/demo-1/fragment.glsl";
 import vertex from "../../shaders/infinite-slider/demo-1/vertex.glsl";
 
-export default class Media {
+export default class {
   constructor({ element, geometry, gl, height, scene, screen, viewport }) {
     this.element = element;
     this.image = this.element.querySelector("img");
