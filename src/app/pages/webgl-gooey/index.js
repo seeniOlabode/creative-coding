@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 import fragmentShader from "../../shaders/webgl-gooey/fragment.glsl";
 import vertexShader from "../../shaders/webgl-gooey/vertex.glsl";
