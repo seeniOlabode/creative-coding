@@ -1,7 +1,7 @@
 {
-  "name": "my-kanye-arc",
+  "name": "Nero ➝ Creative Coding Experiments",
   "version": "1.0.0",
-  "description": "",
+  "description": "Creative Coding Experiments by Nero",
   "alias": {
     "process": {
       "global": {}
