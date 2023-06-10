@@ -1,0 +1,15 @@
+@import "./utils/breakpoints.scss";
+@import "./utils/functions.scss";
+@import "./utils/mixins.scss";
+@import "./utils/variables.scss";
+
+@import "./base/resets.scss";
+@import "./base/fonts.scss";
+@import "./base/globals.scss";
+
+@import "./shared/description.scss";
+@import "./shared/link.scss";
+@import "./shared/links.scss";
+@import "./shared/title.scss";
+
+@import "./pages/home/home.scss";
